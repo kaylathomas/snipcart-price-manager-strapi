@@ -14,6 +14,24 @@ import Select from "@material-ui/core/Select";
 import InputLabel from "@material-ui/core/InputLabel";
 import CountryDropdown from "./components/CountryDropdown";
 
+const buttonStyle = {
+  // Snip originally class GZXvt from Strapi dashboard
+  height: '30px',
+  padding: '0px 15px 2px',
+  fontWeight: '600',
+  fontSize: '0.9rem',
+  lineHeight: 'normal',
+  borderRadius: '2px',
+  cursor: 'pointer',
+  outline: '0px',
+  backgroundColor: 'rgb(0, 126, 255)',
+  border: '1px solid rgb(0, 126, 255)',
+  color: 'rgb(255, 255, 255)',
+  // My custom styles
+  marginTop: '2%',
+  // fontFamily: 'Lato'
+}
+
 function App() {
   // HOLDS THE FORM DATA
   const [data, setData] = useState([{ objKey: "Key", objValue: "First value!" }, {ojKey: "Another Key", objValue: "Second value!"}]);
@@ -67,13 +85,12 @@ function App() {
         </Grid>
       ))}
       <Grid container spacing={2} className="mt-2">
-        <Button
-          style={{ width: "100%", marginTop: "2%" }}
-          variant="contained"
-          color="primary"
+        <button
+          style={buttonStyle}
         >
-          Set Prices
-        </Button>
+          <i class="fa fa-plus" style={{marginRight: '4px'}} aria-hidden="true"></i>
+          Add Currencies
+        </button>
       </Grid>
     </Grid>
   );
