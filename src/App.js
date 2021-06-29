@@ -14,6 +14,9 @@ import Select from "@material-ui/core/Select";
 import InputLabel from "@material-ui/core/InputLabel";
 import CountryDropdown from "./components/CountryDropdown";
 
+// CUSTOM COMPONENTS
+import Select2Dropdown from './components/Select2Dropdown'
+
 const buttonStyle = {
   // Snip originally class GZXvt from Strapi dashboard
   height: '30px',
@@ -52,8 +55,7 @@ function App() {
       {data.map((field, i) => (
         <Grid container spacing={2} style={{ marginTop: "2%" }}>
           <Grid item xs={12} sm={6} md={6} lg={6} xl={6} spacing={2}>
-            <CountryDropdown
-              data={data}
+            <Select2Dropdown
               setData={setData}
               currencyKey={field.objKey}
               updateFieldChanged={updateFieldChanged}
