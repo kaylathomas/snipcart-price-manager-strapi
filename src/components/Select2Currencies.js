@@ -1,637 +1,638 @@
 let currencies = [
     {
-      code: "usd",
+      value: "usd",
       label: "United States Dollar",
     },
     {
-      code: "cad",
+      value: "cad",
       label: "Canadian Dollar"
     },
     {
-      code: "eur",
+      value: "eur",
       label: "European Pound"
     },
     {
-      code: "aed",
+      value: "aed",
       label: "United Arab Emirates Dirham"
     },
     {
-      code: "afn",
+      value: "afn",
       label: "Afghan Afghani"
     },
     {
-      code: "all",
+      value: "all",
       label: "All"
     },
     {
-      code: "amd",
+      value: "amd",
       label: "Armenian Dram"
     },
     {
-      code: "ang",
+      value: "ang",
       label: "Netherlands Antillean Guilder"
     },
     {
-      code: "aoa",
+      value: "aoa",
       label: "Angolan Kwanza"
     },
     {
-      code: "ars",
+      value: "ars",
       label: "Argentine Peso"
     },
     {
-      code: "aud",
+      value: "aud",
       label: "Australian Dollar"
     },
     {
-      code: "awg",
+      value: "awg",
       label: "Aruban Florin"
     },
     {
-      code: "azn",
+      value: "azn",
       label: "Azerbaijani Manat"
     },
     {
-      code: "bam",
+      value: "bam",
       label: "Bosnia and Herzegovina Convertible Mark"
     },
     {
-      code: "bbd",
+      value: "bbd",
       label: "Barbadian Dollar"
     },
     {
-      code: "bdt",
+      value: "bdt",
       label: "Bangladeshi Taka"
     },
     {
-      code: "bgn",
+      value: "bgn",
       label: "Bulgarian Lev"
     },
     {
-      code: "bhd",
+      value: "bhd",
       label: "Bahraini Dinar"
     },
     {
-      code: "bif",
+      value: "bif",
       label: "Burundian Franc"
     },
     {
-      code: "bmd",
+      value: "bmd",
       label: "Bermudian Dollar"
     },
     {
-      code: "bnd",
+      value: "bnd",
       label: "Brunei Dollar"
     },
     {
-      code: "bob",
+      value: "bob",
       label: "Bolivian Boliviano"
     },
     {
-      code: "brl",
+      value: "brl",
       label: "Brazilian Real"
     },
     {
-      code: "bsd",
+      value: "bsd",
       label: "Bahamian Dollar"
     },
     {
-      code: "btn",
+      value: "btn",
       label: "Bhutanese Ngultrum"
     },
     {
-      code: "bwp",
+      value: "bwp",
       label: "Botswana Pula"
     },
     {
-      code: "byr",
+      value: "byr",
       label: "Belarusian Ruble"
     },
     {
-      code: "bzd",
+      value: "bzd",
       label: "Belize Dollar"
     },
     {
-      code: "cdf",
+      value: "cdf",
       label: "Congolese Franc"
     },
     {
-      code: "chf",
+      value: "chf",
       label: "Swiss Franc"
     },
     {
-      code: "clp",
+      value: "clp",
       label: "Chilean Peso"
     },
     {
-      code: "cny",
+      value: "cny",
       label: "Chinese Yuan"
     },
     {
-      code: "cop",
+      value: "cop",
       label: "Colombian Peso"
     },
     {
-      code: "crc",
+      value: "crc",
       label: "Costa Rican Colón"
     },
     {
-      code: "cup",
+      value: "cup",
       label: "Cuban Peso"
     },
     {
-      code: "cve",
+      value: "cve",
       label: "Cape Verdean Escudo"
     },
     {
-      code: "czk",
+      value: "czk",
       label: "Czech Koruna"
     },
     {
-      code: "djf",
+      value: "djf",
       label: "Djiboutian Franc"
     },
     {
-      code: "dkk",
+      value: "dkk",
       label: "Danish Krone"
     },
     {
-      code: "dop",
+      value: "dop",
       label: "Dominican Peso"
     },
     {
-      code: "dzd",
+      value: "dzd",
       label: "Algerian Dinar"
     },
     {
-      code: "egp",
+      value: "egp",
       label: "Egyptian Pound"
     },
     {
-      code: "ern",
+      value: "ern",
       label: "Eritrean Nakfa"
     },
     {
-      code: "etb",
+      value: "etb",
       label: "Ethiopian Birr"
     },
     {
-      code: "fjd",
+      value: "fjd",
       label: "Fijian Dollar"
     },
     {
-      code: "fkp",
+      value: "fkp",
       label: "Falkland Islands Pound"
     },
     {
-      code: "gbp",
+      value: "gbp",
       label: "British Pound Sterling"
     },
     {
-      code: "gel",
+      value: "gel",
       label: "Georgian Lari"
     },
     {
-      code: "ghs",
+      value: "ghs",
       label: "Ghanaian Cedi"
     },
     {
-      code: "gip",
+      value: "gip",
       label: "Gibraltar Pound"
     },
     {
-      code: "gmd",
+      value: "gmd",
       label: "Gambian Dalasi"
     },
     {
-      code: "gnf",
+      value: "gnf",
       label: "Guinean Franc"
     },
     {
-      code: "gtq",
+      value: "gtq",
       label: "Guatemalan Quetzal"
     },
     {
-      code: "gyd",
+      value: "gyd",
       label: "Guyanese Dollar"
     },
     {
-      code: "hkd",
+      value: "hkd",
       label: "Hong Kong Dollar"
     },
     {
-      code: "hnl",
+      value: "hnl",
       label: "Honduran Lempira"
     },
     {
-      code: "hrk",
+      value: "hrk",
       label: "Croatian Kuna"
     },
     {
-      code: "htg",
+      value: "htg",
       label: "Haitian Gourde"
     },
     {
-      code: "huf",
+      value: "huf",
       label: "Hungarian Forint"
     },
     {
-      code: "idr",
+      value: "idr",
       label: "Indonesian Rupiah"
     },
     {
-      code: "ils",
+      value: "ils",
       label: "Israeli New Shekel"
     },
     {
-      code: "inr",
+      value: "inr",
       label: "Indian Rupee"
     },
     {
-      code: "iqd",
+      value: "iqd",
       label: "Iraqi Dinar"
     },
     {
-      code: "irr",
+      value: "irr",
       label: "Iranian Rial"
     },
     {
-      code: "isk",
+      value: "isk",
       label: "Icelandic Króna"
     },
     {
-      code: "jmd",
+      value: "jmd",
       label: "Jamaican Dollar"
     },
     {
-      code: "jod",
+      value: "jod",
       label: "Jordanian Dinar"
     },
     {
-      code: "jpy",
+      value: "jpy",
       label: "Japanese Yen"
     },
     {
-      code: "kes",
+      value: "kes",
       label: "Kenyan Shilling"
     },
     {
-      code: "kgs",
+      value: "kgs",
       label: "Wikipedia"
     },
     {
-      code: "khr",
+      value: "khr",
       label: "Cambodian Riel"
     },
     {
-      code: "kmf",
+      value: "kmf",
       label: "Kyrgyzstani Som"
     },
     {
-      code: "kpw",
+      value: "kpw",
       label: "North Korean Won"
     },
     {
-      code: "krw",
+      value: "krw",
       label: "South Korean Won"
     },
     {
-      code: "kwd",
+      value: "kwd",
       label: "Kuwaiti Dinar"
     },
     {
-      code: "kyd",
+      value: "kyd",
       label: "Cayman Islands Dollar"
     },
     {
-      code: "kzt",
+      value: "kzt",
       label: "Kazakhstani Tenge"
     },
     {
-      code: "lak",
+      value: "lak",
       label: "Lao Kip"
     },
     {
-      code: "lbp",
+      value: "lbp",
       label: "Lebanese Pound"
     },
     {
-      code: "lkr",
+      value: "lkr",
       label: "Sri Lankan Rupee"
     },
     {
-      code: "lrd",
+      value: "lrd",
       label: "Liberian Dollar"
     },
     {
-      code: "lsl",
+      value: "lsl",
       label: "Lesotho Loti"
     },
     {
-      code: "ltl",
+      value: "ltl",
       label: "Lithuanian Litas"
     },
     {
-      code: "lvl",
+      value: "lvl",
       label: "Latvian Lats"
     },
     {
-      code: "lyd",
+      value: "lyd",
       label: "Libyan Dinar"
     },
     {
-      code: "mad",
+      value: "mad",
       label: "Moroccan Dirham"
     },
     {
-      code: "mdl",
+      value: "mdl",
       label: "Moldovan Leu"
     },
     {
-      code: "mga",
+      value: "mga",
       label: "Malagasy Ariary"
     },
     {
-      code: "mkd",
+      value: "mkd",
       label: "Macedonian Denar"
     },
     {
-      code: "mmk",
+      value: "mmk",
       label: "Myanmar Kyat"
     },
     {
-      code: "mnt",
+      value: "mnt",
       label: "Mongolian Tögrög"
     },
     {
-      code: "mop",
+      value: "mop",
       label: "Macanese Pataca"
     },
     {
-      code: "mro",
+      value: "mro",
       label: "Mauritanian Ouguiya"
     },
     {
-      code: "mur",
+      value: "mur",
       label: "Mauritian Rupee"
     },
     {
-      code: "mvr",
+      value: "mvr",
       label: "Maldivian Rufiyaa"
     },
     {
-      code: "mwk",
+      value: "mwk",
       label: "Malawian Kwacha"
     },
     {
-      code: "mxn",
+      value: "mxn",
       label: "Mexican Peso"
     },
     {
-      code: "myr",
+      value: "myr",
       label: "Malaysian Ringgit"
     },
     {
-      code: "mzn",
+      value: "mzn",
       label: "Mozambican Metical"
     },
     {
-      code: "nad",
+      value: "nad",
       label: "Namibian Dollar"
     },
     {
-      code: "ngn",
+      value: "ngn",
       label: "Nigerian Naira"
     },
     {
-      code: "nio",
+      value: "nio",
       label: "Namibian Dollar"
     },
     {
-      code: "nok",
+      value: "nok",
       label: "Norwegian Krone"
     },
     {
-      code: "npr",
+      value: "npr",
       label: "Nepalese Rupee"
     },
     {
-      code: "nzd",
+      value: "nzd",
       label: "New Zealand Dollar"
     },
     {
-      code: "omr",
+      value: "omr",
       label: "Omani Rial"
     },
     {
-      code: "pab",
+      value: "pab",
       label: "Panamanian Balboa"
     },
     {
-      code: "pen",
+      value: "pen",
       label: "Peruvian Sol"
     },
     {
-      code: "pgk",
+      value: "pgk",
       label: "Papua New Guinean Kina"
     },
     {
-      code: "php",
+      value: "php",
       label: "Philippine Peso"
     },
     {
-      code: "pkr",
+      value: "pkr",
       label: "Pakistani Rupee"
     },
     {
-      code: "pln",
+      value: "pln",
       label: "Polish Złoty"
     },
     {
-      code: "pyg",
+      value: "pyg",
       label: "Paraguayan Guaraní"
     },
     {
-      code: "qar",
+      value: "qar",
       label: "Qatari Riyal"
     },
     {
-      code: "ron",
+      value: "ron",
       label: "Romanian Leu"
     },
     {
-      code: "rsd",
+      value: "rsd",
       label: "Serbian Dinar"
     },
     {
-      code: "rub",
+      value: "rub",
       label: "Russian Ruble"
     },
     {
-      code: "rwf",
+      value: "rwf",
       label: "Rwandan Franc"
     },
     {
-      code: "sar",
+      value: "sar",
       label: "Saudi Riyal"
     },
     {
-      code: "sbd",
+      value: "sbd",
       label: "Solomon Islands Dollar"
     },
     {
-      code: "scr",
+      value: "scr",
       label: "Seychellois Rupee"
     },
     {
-      code: "sdg",
+      value: "sdg",
       label: "Sudanese Pound"
     },
     {
-      code: "sek",
+      value: "sek",
       label: "Swedish Krona"
     },
     {
-      code: "sgd",
+      value: "sgd",
       label: "Singapore Dollar"
     },
     {
-      code: "shp",
+      value: "shp",
       label: "Saint Helena Pound"
     },
     {
-      code: "sll",
+      value: "sll",
       label: "Sierra Leonean Leone"
     },
     {
-      code: "sos",
+      value: "sos",
       label: "Somali Shilling"
     },
     {
-      code: "srd",
+      value: "srd",
       label: "Surinamese Dollar"
     },
     {
-      code: "ssp",
+      value: "ssp",
       label: "South Sudanese Pound"
     },
     {
-      code: "std",
+      value: "std",
       label: "São Tomé and Príncipe Dobra"
     },
     {
-      code: "syp",
+      value: "syp",
       label: "Syrian Pound"
     },
     {
-      code: "szl",
+      value: "szl",
       label: "Swazi Lilangeni"
     },
     {
-      code: "thb",
+      value: "thb",
       label: "Thai Baht"
     },
     {
-      code: "tjs",
+      value: "tjs",
       label: "Wikipedia"
     },
     {
-      code: "tmt",
+      value: "tmt",
       label: "Tajikistani Somoni"
     },
     {
-      code: "tnd",
+      value: "tnd",
       label: "Tunisian Dinar"
     },
     {
-      code: "top",
+      value: "top",
       label: "Tonga Pa’anga"
     },
     {
-      code: "try",
+      value: "try",
       label: "Turkish Lira"
     },
     {
-      code: "ttd",
+      value: "ttd",
       label: "Trinidad And Tobago Dollar"
     },
     {
-      code: "twd",
+      value: "twd",
       label: "New Taiwan Dollar"
     },
     {
-      code: "tzs",
+      value: "tzs",
       label: "Tanzanian Shilling"
     },
     {
-      code: "uah",
+      value: "uah",
       label: "Ukrainian Hryvnia"
     },
     {
-      code: "ugx",
+      value: "ugx",
       label: "Ugandan Shilling"
     },
     {
-      code: "uyu",
+      value: "uyu",
       label: "Uruguayan Peso"
     },
     {
-      code: "uzs",
+      value: "uzs",
       label: "Uzbekistani Soʻm"
     },
     {
-      code: "vef",
+      value: "vef",
       label: "Venezuelan Bolívar"
     },
     {
-      code: "vnd",
+      value: "vnd",
       label: "Vietnamese Dong"
     },
     {
-      code: "vuv",
+      value: "vuv",
       label: "Vanuatu Vatu"
     },
     {
-      code: "wst",
+      value: "wst",
       label: "Samoan Tālā"
     },
     {
-      code: "xaf",
+      value: "xaf",
       label: "Central African Cfa Franc"
     },
     {
-      code: "xcd",
+      value: "xcd",
       label: "Eastern Caribbean Dollar"
     },
     {
-      code: "xof",
+      value: "xof",
       label: "West African Cfa Franc"
     },
     {
-      code: "xpf",
+      value: "xpf",
       label: "Cfp Franc"
     },
     {
-      code: "yer",
+      value: "yer",
       label: "Yemeni Rial"
     },
     {
-      code: "zar",
+      value: "zar",
       label: "South African Rand"
     },
     {
-      code: "zmk",
+      value: "zmk",
       label: "Zambian Kwacha"
     },
     {
-      code: "zwl",
+      value: "zwl",
       label: "Zimbabwean Dollar"
     }
   ];
 
-  // Programatically adds a value with the html for each item before exporting
+  // Programatically adds the value element (region code) to the label for rendering
   currencies.forEach(currency => {
-      currency.spanCode = `<span>${currency.code.toUpperCase()}</span>`
+      let currentLabel = currency.label
+      currency.label = `${currentLabel} | ${currency.value.toUpperCase()}`
   })
   
   export default currencies;

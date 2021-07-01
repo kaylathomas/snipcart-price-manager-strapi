@@ -1,0 +1,113 @@
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  @media (min-width: 768px) {
+    .container {
+      width: 750px;
+    }
+  }
+  @media (min-width: 992px) {
+    .container {
+      width: 970px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .container {
+      width: 1170px;
+    }
+  }
+
+.container-left {
+    padding-left: 7px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  @media (min-width: 768px) {
+    .container-left {
+      width: 750px;
+    }
+  }
+  @media (min-width: 992px) {
+    .container-left {
+      width: 970px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .container-left {
+      width: 1170px;
+    }
+  }
+
+.container-right {
+    padding-right: 7px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  @media (min-width: 768px) {
+    .container-left {
+      width: 750px;
+    }
+  }
+  @media (min-width: 992px) {
+    .container-left {
+      width: 970px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .container-left {
+      width: 1170px;
+    }
+  }
+
+/* Textfield style*/
+.strapiField {
+    height: 3.4rem;
+    padding: 0px 1rem;
+    font-weight: 400;
+    font-size: 1.3rem;
+    cursor: text;
+    outline: 0px;
+    border: 1px solid rgb(227, 233, 243);
+    border-radius: 2px;
+    color: rgb(51, 55, 64);
+    background-color: transparent;
+}
+
+/* input{
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: -internal-light-dark(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: auto;
+    background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+    padding: 1px 2px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+}
+
+.input:focus {
+    outline: solid;
+    border-color:rgb(51, 55, 64);
+    box-shadow: 0 0 10px #719ECE;
+} */
+
+/* ::selection {
+    background-color: #b3d4fc;
+    color: #000000;
+    text-shadow: none;
+} */

@@ -14,6 +14,9 @@ import Select from "@material-ui/core/Select";
 import InputLabel from "@material-ui/core/InputLabel";
 import CountryDropdown from "./components/CountryDropdown";
 
+// CUSTOM STYLES
+import './css/inputSyles.css'
+
 // CUSTOM COMPONENTS
 import Select2Dropdown from './components/Select2Dropdown'
 
@@ -51,50 +54,63 @@ function App() {
 }
 
   return (
-    <Grid container direction="column" justify="center" fixed spacing={2}>
+    <div className="container">
+      <section>
       {data.map((field, i) => (
-        <Grid container spacing={2} style={{ marginTop: "2%" }}>
-          <Grid item xs={12} sm={6} md={6} lg={6} xl={6} spacing={2}>
-            <Select2Dropdown
-              setData={setData}
-              currencyKey={field.objKey}
-              updateFieldChanged={updateFieldChanged}
-            />
-          </Grid>
-          <Grid item xs={12} sm={6} md={6} lg={6} xl={6} spacing={2}>
-            <TextField
-              id="lastName"
-              fullWidth
-              label="Price"
-              variant="outlined"
-              value={field.objValue}
-              // onChange={(event) => {
-              //   setData([
-              //     ...data,
-              //     {
-              //       ...field,
-              //       objValue: event.target.value
-              //     }
-              //   ]);
-              //   console.log(i)
-              //   console.log(data);
-              // }}
-              onChange={
-                updateFieldChanged(i)
-              }
-            />
-          </Grid>
-        </Grid>
+        <form class="pure-form pure-form-stacked">
+          <div className="pure-g" style={{ marginTop: "1%" }}>
+            <div className="pure-u-1-2">
+              <Select2Dropdown
+                setData={setData}
+                currencyKey={field.objKey}
+                updateFieldChanged={updateFieldChanged}
+              />
+            </div>
+            <div className="pure-u-1-2">
+              <input
+                id={`${i}value_field`}
+                label="Price"
+                className="pure-input-1 container-left"
+                style={{
+                  height: '3.4rem',
+                  lineHeight: '3.4rem',
+                  fontWeight: '400',
+                  fontSize: '1.3rem'
+                }}
+                value={field.objValue}
+                // className="strapiField"
+                placeholder='Price...'
+                // onChange={(event) => {
+                //   setData([
+                //     ...data,
+                //     {
+                //       ...field,
+                //       objValue: event.target.value
+                //     }
+                //   ]);
+                //   console.log(i)
+                //   console.log(data);
+                // }}
+                onChange={
+                  updateFieldChanged(i)
+                }
+              />
+            </div>
+          </div>
+        </form>
       ))}
-      <Grid container spacing={2} className="mt-2">
-        <button
-          style={buttonStyle}
-        >
-          <i class="fa fa-plus" style={{marginRight: '4px'}} aria-hidden="true"></i>
-          Add Currencies
-        </button>
-      </Grid>
-    </Grid>
+      <div className="pure-g">
+        <div className="pure-u-1-2">
+          <button
+            style={buttonStyle}
+          >
+            <i class="fa fa-plus" style={{marginRight: '4px'}} aria-hidden="true"></i>
+            Add Currencies
+          </button>
+        </div>
+      </div>
+      </section>
+    </div>
   );
 }
 
