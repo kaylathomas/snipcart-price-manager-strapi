@@ -6,46 +6,70 @@ export default function CountryModal({ toggleModal, isOpen, data, setData, curre
     // const [tempCountries, setTempCountries] = useState([...currencies]);
     // const [tempData, setTempData] = useState([]);
 
-    const [tempData, setTempData] = useState([]);
+    let preTemp = []
 
-    let countryValues = []
-
-    currencies.forEach(currency => {
-        let currentValue = currency.value
-        countryValues.push(currentValue)
+    data.forEach(item => {
+        preTemp.push(item.code)
     })
 
-    console.log(countryValues)
+    const [tempData, setTempData] = useState([...preTemp]);
+
+
+    // An object filled with key/value pairs of country codes and country labels
+    let countryValues = {}
+
+    currencies.forEach(currency => {
+        countryValues[currency.value] = currency.label
+    })
+
+
+    // currencies.forEach(currency => {
+    //     let currentValue = currency.value
+    //     countryValues.push(currentValue)
+    // })
 
     let createObj = (original) => {
-        return { objKey: original.label, objValue: '', objCode: original.code, checked: true }
+        return { code: original, objKey: countryValues[original], objValue: ''}
     }
 
-    // let handleCheckboxChange = (event, index) => {
-    //     let tempObj = event.target.value
-    //     let tempArray = [...currencies]
-    //     tempArray[index].checked = !tempArray[index].checked
-    //     setTempData([tempArray]);
-    //     // if (tempData.includes(tempObj)) {
-    //     //     setTempData(tempData.filter(currencyObj => currencyObj !== tempObj));
-    //     // }
-    //     console.log(tempData)
-    // };
+    const handleCheckboxChange = (event, index) => {
+        let tempCode = event.target.value
+        console.log(countryValues[tempCode])
 
-    let handleCheckboxChange = (event, index) => {
-        let tempObj = event.target.value
-        let tempValue = tempObj.value
-        if (tempData.includes(tempObj)) {
+        // If the value of the checked item exists inside of the tempData
+        // array, it sets tempData to an array where that value is
+        // filtered out.
+        if (tempData.includes(tempCode)) {
             let tempArray = [...tempData]
-            tempArray[tempValue].checked = !tempArray[index].checked
-            tempArray.filter(currencyObj => currencyObj !== tempObj)
-            setTempData([tempArray]);
+            // tempArray[tempValue].checked = !tempArray[index].checked
+            
+            setTempData(tempArray.filter(currentCode => currentCode !== tempCode))
+        
+        // If the value of the checked item does NOT exist inside of
+        // tempData, it adds it (pushes it) to the temp array, and tempData
+        // is set to that.
         } else {
-            let oldArray = [...tempData]
-            setTempData(oldArray => [...oldArray, tempObj])
+            let tempArray = [...tempData]
+            tempArray.push(tempCode)
+            setTempData(tempArray)
         }
         console.log(tempData)
     };
+
+    const saveAdditions = () => {
+        let newData = []
+        tempData.forEach((item, i) => {
+            if(preTemp.includes(item)) {
+                data.forEach((oldObj, i) => {
+                    oldObj.code == item && newData.push(oldObj)
+                })
+            } else {
+                newData.push(createObj(item))
+            }
+        })
+        setData(newData)
+        toggleModal()
+    }
 
     return (
         <Modal
@@ -64,8 +88,9 @@ export default function CountryModal({ toggleModal, isOpen, data, setData, curre
                             <input 
                                 type="checkbox" 
                                 id={`currency_checkbox_${i}`} 
-                                value={currency}
-                                onClick={(event) => handleCheckboxChange(event, i)}/> {currency.label}
+                                value={currency.value}
+                                checked={tempData.includes(currency.value) ? true : false}
+                                onChange={(event) => handleCheckboxChange(event, i)}/> {currency.label}
                         </label>
                     </div>
                 ))}
@@ -78,7 +103,7 @@ export default function CountryModal({ toggleModal, isOpen, data, setData, curre
                 Cancel
             </button>
             <button 
-                onClick={toggleModal}
+                onClick={saveAdditions}
                 className="strapi-button-success"
             >
                 Save

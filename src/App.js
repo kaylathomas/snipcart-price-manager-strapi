@@ -12,7 +12,7 @@ import CountryModal from "./components/CountryModal";
 
 function App() {
   // HOLDS THE FORM DATA
-  const [data, setData] = useState([{objKey: 'Canadian Dollar | CAD', objValue: '20.00'}, {objKey: 'Angolan Kwanza | AOA', objValue: '45.00'}]);
+  const [data, setData] = useState([{code: 'cad', objKey: 'Canadian Dollar | CAD', objValue: '20.00'}, {code: 'aoa', objKey: 'Angolan Kwanza | AOA', objValue: '45.00'}]);
 
   // Logic to change value of individual value field
   const updatePairValue = (event, index) => {
