@@ -63,10 +63,10 @@
   }
 
 /* Textfield style*/
-.strapiField {
+.strapi-field {
     height: 3.4rem;
     padding: 0px 1rem;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 1.3rem;
     cursor: text;
     outline: 0px;
@@ -74,6 +74,69 @@
     border-radius: 2px;
     color: rgb(51, 55, 64);
     background-color: transparent;
+}
+
+.strapi-button-primary {
+    height: 30px;
+    padding: 0px 15px 2px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    line-height: normal;
+    border-radius: 2px;
+    cursor: pointer;
+    outline: 0px;
+    background-color: rgb(0, 126, 255);
+    border: 1px solid rgb(0, 126, 255);
+    color: rgb(255, 255, 255);
+    margin-top: 2%;
+}
+
+.strapi-button-danger {
+    height: 30px;
+    padding: 0px 15px 2px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    line-height: normal;
+    border-radius: 2px;
+    cursor: pointer;
+    outline: 0px;
+    background-color: rgb(232, 68, 47);
+    border: 1px solid rgb(232, 68, 47);
+    color: rgb(255, 255, 255);
+    margin-top: 2%;
+}
+
+.strapi-button-success {
+    height: 30px;
+    padding: 0px 15px 2px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    line-height: normal;
+    border-radius: 2px;
+    cursor: pointer;
+    outline: 0px;
+    background-color: rgb(105, 186, 5);
+    border: 1px solid rgb(105, 186, 5);
+    color: rgb(255, 255, 255);
+    margin-top: 2%;
+}
+
+.modal-text {
+    font-size: 1.2rem;
+    margin-top: 1%;
+}
+
+input[type='checkbox'] {
+    -webkit-appearance:none;
+    width: 1.5rem;
+    height: 1.5rem;
+    background:white;
+    border-radius:5px;
+    border:1.5px solid rgb(0, 0, 0);
+}
+
+input[type='checkbox']:checked {
+    background: rgba(0, 128, 255, 0.534);
 }
 
 /* input{

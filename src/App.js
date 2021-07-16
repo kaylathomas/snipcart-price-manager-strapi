@@ -1,116 +1,110 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 
-// MATERIAL UI COMPONENTS
-import { makeStyles } from "@material-ui/core/styles";
-import Grid from "@material-ui/core/Grid";
-import Button from "@material-ui/core/Button";
-
-// FORM INPUT
-import TextField from "@material-ui/core/TextField";
-import FormHelperText from "@material-ui/core/FormHelperText";
-import FormControl from "@material-ui/core/FormControl";
-import Select from "@material-ui/core/Select";
-import InputLabel from "@material-ui/core/InputLabel";
-import CountryDropdown from "./components/CountryDropdown";
+import currencies from "./components/fields/Select2Currencies";
 
 // CUSTOM STYLES
 import './css/inputSyles.css'
 
 // CUSTOM COMPONENTS
-import Select2Dropdown from './components/Select2Dropdown'
-
-const buttonStyle = {
-  // Snip originally class GZXvt from Strapi dashboard
-  height: '30px',
-  padding: '0px 15px 2px',
-  fontWeight: '600',
-  fontSize: '0.9rem',
-  lineHeight: 'normal',
-  borderRadius: '2px',
-  cursor: 'pointer',
-  outline: '0px',
-  backgroundColor: 'rgb(0, 126, 255)',
-  border: '1px solid rgb(0, 126, 255)',
-  color: 'rgb(255, 255, 255)',
-  // My custom styles
-  marginTop: '2%',
-  // fontFamily: 'Lato'
-}
+import Select2Dropdown from './components/fields/Select2Dropdown'
+import CountryModal from "./components/CountryModal";
 
 function App() {
   // HOLDS THE FORM DATA
-  const [data, setData] = useState([{ objKey: "Key", objValue: "First value!" }, {ojKey: "Another Key", objValue: "Second value!"}]);
+  const [data, setData] = useState([{objKey: 'Canadian Dollar | CAD', objValue: '20.00'}, {objKey: 'Angolan Kwanza | AOA', objValue: '45.00'}]);
 
-  // Logic to change value of individual field data
-  const updateFieldChanged = index => event => {
+  // Logic to change value of individual value field
+  const updatePairValue = (event, index) => {
 
-    console.log('index: ' + index);
-    console.log('property name: '+ event.target.name);
     let newArr = [...data]; // copying the old datas array
-    newArr[index] = event.target.value; // replace e.target.value with whatever you want to change it to
+    newArr[index].objValue = event.target.value; // replace event.target.value with whatever you want to change it to
+    // console.log(`This is the new value: ${newArr[index].objValue}`)
+    setData(newArr); // Set the real array to be equal to the temporary array
 
-    setData(newArr); // ??
-}
+    // console.log('index: ' + index);
+    // console.log('property name: '+ event.target.value);
+    // console.log(`This is how the new data looks: {objKey: ${data[index].objKey}, objValue: ${data[index].objValue}}`)
+  }
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  function toggleModal() {
+    setIsOpen(!isOpen);
+  }
+
+  const updatePairKey = (index, key) => {
+    let newArr = [...data]; // copying the old datas array
+    newArr[index].objKey = key.label; // replace event.target.value with whatever you want to change it to
+    // console.log(`This is the new key: ${newArr[index].objKey}`)
+    setData(newArr); // Set the real array to be equal to the temporary array
+  }
 
   return (
-    <div className="container">
-      <section>
-      {data.map((field, i) => (
-        <form class="pure-form pure-form-stacked">
-          <div className="pure-g" style={{ marginTop: "1%" }}>
-            <div className="pure-u-1-2">
-              <Select2Dropdown
-                setData={setData}
-                currencyKey={field.objKey}
-                updateFieldChanged={updateFieldChanged}
-              />
+    <>
+      <div className="container">
+        <section>
+        {data.map((field, i) => (
+          <form class="pure-form pure-form-stacked">
+            <div className="pure-g" style={{ marginTop: "1%" }}>
+              <div className="pure-u-1-2">
+                <Select2Dropdown
+                  i={i}
+                  data={data}
+                  setData={setData}
+                  field={field}
+                  updatePairKey={updatePairKey}
+                  currencies={currencies}
+                />
+              </div>
+              <div className="pure-u-1-2">
+                <input
+                  id={`${i}value_field`}
+                  label="Price"
+                  className="pure-input-1 container-left"
+                  style={{
+                    height: '3.4rem',
+                    lineHeight: '3.4rem',
+                    fontWeight: '400',
+                    fontSize: '1.3rem'
+                  }}
+                  value={field.objValue}
+                  // className="strapi-field"
+                  placeholder='Price...'
+                  // onChange={(event) => {
+                  //   setData([
+                  //     ...data,
+                  //     {
+                  //       ...field,
+                  //       objValue: event.target.value
+                  //     }
+                  //   ]);
+                  //   console.log(i)
+                  //   console.log(data);
+                  // }}
+                  onChange={event =>
+                    updatePairValue(event, i)
+                  }
+                />
+              </div>
             </div>
-            <div className="pure-u-1-2">
-              <input
-                id={`${i}value_field`}
-                label="Price"
-                className="pure-input-1 container-left"
-                style={{
-                  height: '3.4rem',
-                  lineHeight: '3.4rem',
-                  fontWeight: '400',
-                  fontSize: '1.3rem'
-                }}
-                value={field.objValue}
-                // className="strapiField"
-                placeholder='Price...'
-                // onChange={(event) => {
-                //   setData([
-                //     ...data,
-                //     {
-                //       ...field,
-                //       objValue: event.target.value
-                //     }
-                //   ]);
-                //   console.log(i)
-                //   console.log(data);
-                // }}
-                onChange={
-                  updateFieldChanged(i)
-                }
-              />
-            </div>
+          </form>
+        ))}
+        <div className="pure-g">
+          <div className="pure-u-1-2">
+            <button
+              className="strapi-button-primary"
+              onClick={toggleModal}
+            >
+              <i class="fa fa-plus" style={{marginRight: '4px'}} aria-hidden="true"></i>
+              Add Currencies
+            </button>
           </div>
-        </form>
-      ))}
-      <div className="pure-g">
-        <div className="pure-u-1-2">
-          <button
-            style={buttonStyle}
-          >
-            <i class="fa fa-plus" style={{marginRight: '4px'}} aria-hidden="true"></i>
-            Add Currencies
-          </button>
         </div>
+        </section>
       </div>
-      </section>
-    </div>
+      <CountryModal toggleModal={toggleModal} isOpen={isOpen} data={data} setData={setData} currencies={currencies}/>
+    </>
   );
 }
 

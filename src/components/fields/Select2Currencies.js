@@ -1,7 +1,7 @@
 let currencies = [
     {
       value: "usd",
-      label: "United States Dollar",
+      label: "United States Dollar"
     },
     {
       value: "cad",

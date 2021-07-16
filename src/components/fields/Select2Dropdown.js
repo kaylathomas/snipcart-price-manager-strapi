@@ -1,9 +1,8 @@
 import React from 'react';
 
 import Select from 'react-select';
-import currencies from "./Select2Currencies";
 
-export default function Select2Dropdown() {
+export default function Select2Dropdown({ i, data, setData, field, updatePairKey, currencies }) {
     let customInputStyles = {
         input: () => ({
 
@@ -24,7 +23,7 @@ export default function Select2Dropdown() {
             height: '3.4rem',
             lineHeight: '3.4rem',
             fontWeight: '400',
-            fontSize: '1.3rem',
+            fontSize: '1.5rem',
             // cursor: 'text',
             // outline: '0px',
             // border: '1px solid rgb(227, 233, 243)',
@@ -33,18 +32,33 @@ export default function Select2Dropdown() {
             // backgroundColor: 'transparent',
         })
     }
-    console.log(currencies)
+    
+    const handleChange = (event) => {
+        console.log(event.target.value)
+    }
+
+    const formatField = (info) => {
+        let formatted = {}
+        formatted.label = info.objKey
+        formatted.value = info.objValue
+        return formatted
+    }
+
     return (
         <Select
-        //   className="strapiField"
+        //   className="strapi-field"
           classNamePrefix="select"
           defaultValue={currencies[0]}
+          value={formatField(field)}
           isClearable={true}
           isSearchable={true}
           name="currencies"
           options={currencies}
           styles={customInputStyles}
           className="pure-input-1 container-right"
+          onChange = {item =>
+                updatePairKey(i, item)
+            }
         />
     );
 }
