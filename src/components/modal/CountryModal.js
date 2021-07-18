@@ -13,12 +13,13 @@ export default function CountryModal({ toggleModal, isOpen, data, setData, curre
     })
 
     const [tempData, setTempData] = useState([...preTemp]);
-
+    const [tempCurrencies, setTempCurrencies] = useState([...currencies]);
+    const [countrySearch, setCountrySearch] = useState('');
 
     // An object filled with key/value pairs of country codes and country labels
     let countryValues = {}
 
-    currencies.forEach(currency => {
+    tempCurrencies.forEach(currency => {
         countryValues[currency.value] = currency.label
     })
 
@@ -71,6 +72,15 @@ export default function CountryModal({ toggleModal, isOpen, data, setData, curre
         toggleModal()
     }
 
+    // Search function
+    const handleSearch = (event) => {
+        // Set's the value of your field to what you're typing in
+        setCountrySearch(event.target.value)
+        // Filter the countries (effectively "searching")
+        let tempArray = [tempCurrencies]
+        setTempCurrencies(tempArray.filter(country => country.includes(event.target.value)))
+    }
+
     return (
         <Modal
             isOpen={isOpen}
@@ -78,12 +88,21 @@ export default function CountryModal({ toggleModal, isOpen, data, setData, curre
             contentLabel="My dialog"
         >
             <div>
-
+                <span className="country-modal-header">
+                    Available Currencies
+                </span>
+                <input 
+                    type="text" 
+                    className="country-searchbar" 
+                    placeholder={`Narrow down your search...`} 
+                    value={countrySearch}
+                    onChange = {handleSearch}
+                />
             </div>
             <hr />
-            <div class="pure-g">
-                {currencies.map((currency, i) => (
-                    <div class="pure-u-1-3">
+            <div class="pure-g country-window">
+                {tempCurrencies.map((currency, i) => (
+                    <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-3 pure-u-xl-1-3">
                         <label for="stacked-remember" class="pure-checkbox modal-text">
                             <input 
                                 type="checkbox" 

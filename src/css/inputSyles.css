@@ -126,6 +126,30 @@
     margin-top: 1%;
 }
 
+.country-window {
+  overflow: scroll;
+  height: 78%;
+}
+
+.country-modal-header {
+  font-size: 2rem;
+  margin-right: 0.5rem;
+}
+
+.country-searchbar {
+  height: 3.4rem;
+    padding: 0px 1rem;
+    font-weight: 300;
+    font-size: 1.3rem;
+    cursor: text;
+    outline: 0px;
+    border: 1px solid rgb(42, 124, 255);
+    border-radius: 2px;
+    color: rgb(51, 55, 64);
+    background-color: transparent;
+    width: 95%;
+}
+
 input[type='checkbox'] {
     -webkit-appearance:none;
     width: 1.5rem;

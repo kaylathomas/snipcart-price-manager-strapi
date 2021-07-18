@@ -1,18 +1,33 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 
-import currencies from "./components/fields/Select2Currencies";
+import currencies from "./components/modal/Select2Currencies";
 
 // CUSTOM STYLES
 import './css/inputSyles.css'
 
 // CUSTOM COMPONENTS
 import Select2Dropdown from './components/fields/Select2Dropdown'
-import CountryModal from "./components/CountryModal";
+import CountryModal from "./components/modal/CountryModal";
 
 function App() {
   // HOLDS THE FORM DATA
-  const [data, setData] = useState([{code: 'cad', objKey: 'Canadian Dollar | CAD', objValue: '20.00'}, {code: 'aoa', objKey: 'Angolan Kwanza | AOA', objValue: '45.00'}]);
+  const [data, setData] = useState([]);
+
+  const formatFinalJson = (originalJson) => {
+
+    let finalOutput = {}
+
+    originalJson.forEach(item => {
+      finalOutput[item.code] = parseFloat(item.objValue)
+    })
+
+    return finalOutput
+  }
+
+  // Formats the data to JSON for later output.
+  // Does this on every load.
+  const [finalJson, setFinalJson] = useState({})
 
   // Logic to change value of individual value field
   const updatePairValue = (event, index) => {
@@ -22,9 +37,8 @@ function App() {
     // console.log(`This is the new value: ${newArr[index].objValue}`)
     setData(newArr); // Set the real array to be equal to the temporary array
 
-    // console.log('index: ' + index);
-    // console.log('property name: '+ event.target.value);
-    // console.log(`This is how the new data looks: {objKey: ${data[index].objKey}, objValue: ${data[index].objValue}}`)
+    // Format's the output variable again to prep for saving
+    setFinalJson(formatFinalJson(data))
   }
 
   const [isOpen, setIsOpen] = useState(false);
@@ -36,13 +50,21 @@ function App() {
   const updatePairKey = (index, key) => {
     let newArr = [...data]; // copying the old datas array
     newArr[index].objKey = key.label; // replace event.target.value with whatever you want to change it to
+    // Updates the country code along with the label
+    newArr[index].code = key.value
     // console.log(`This is the new key: ${newArr[index].objKey}`)
     setData(newArr); // Set the real array to be equal to the temporary array
+    setFinalJson(formatFinalJson(data))
   }
 
   return (
     <>
       <div className="container">
+        <h2>
+          <u>
+            Manage Price by Country
+          </u>
+        </h2>
         <section>
         {data.map((field, i) => (
           <form class="pure-form pure-form-stacked">
